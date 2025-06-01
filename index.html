@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Audio Combiner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Video Audio Combiner</h1>
+            <p>Combine video and audio files, replacing the original audio</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-box">
+                <label for="video-input" class="upload-label">
+                    <div class="upload-icon">🎥</div>
+                    <span>Choose Video File</span>
+                    <input type="file" id="video-input" accept="video/*" hidden>
+                </label>
+                <div class="file-info" id="video-info"></div>
+            </div>
+
+            <div class="upload-box">
+                <label for="audio-input" class="upload-label">
+                    <div class="upload-icon">🎵</div>
+                    <span>Choose Audio File</span>
+                    <input type="file" id="audio-input" accept="audio/*" hidden>
+                </label>
+                <div class="file-info" id="audio-info"></div>
+            </div>
+        </div>
+
+        <div class="preview-section" id="preview-section" style="display: none;">
+            <div class="preview-box">
+                <h3>Video Preview</h3>
+                <video id="video-preview" controls muted></video>
+            </div>
+            <div class="preview-box">
+                <h3>Audio Preview</h3>
+                <audio id="audio-preview" controls></audio>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="combine-btn" class="btn btn-primary" disabled>
+                <span class="btn-text">Combine Files</span>
+                <div class="loading-spinner" style="display: none;"></div>
+            </button>
+        </div>
+
+        <div class="progress-section" id="progress-section" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Processing...</div>
+        </div>
+
+        <div class="result-section" id="result-section" style="display: none;">
+            <h3>Combined Video</h3>
+            <video id="result-video" controls></video>
+            <button id="download-btn" class="btn btn-success">Download Combined Video</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
